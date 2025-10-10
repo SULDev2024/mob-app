@@ -9,12 +9,11 @@ import {
   StyleSheet,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import {IMG} from '../../laughing-refined-woman-striped-t-shirt-holding-store-bags_197531-16464.jpg' 
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
-      {/* ===== Seah Bar ===== */}
+      
       <View style={styles.searchBar}>
         <Ionicons name="search" size={20} color="#555" style={{ marginRight: 8 }} />
         <TextInput
@@ -38,7 +37,7 @@ export default function HomeScreen() {
       
       <Image
         source={{
-          uri: {IMG},
+          uri:{'http/www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Ffashion-model&psig=AOvVaw0Jz1w0K8mXnX5Kf3cXQX6G&ust=1696065600000000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJj1kq6T1P4CFQAAAAAdAAAAABAE'},
         }}
         style={styles.bannerImage}
         resizeMode="cover"
