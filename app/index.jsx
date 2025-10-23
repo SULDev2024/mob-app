@@ -6,6 +6,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../bottomTab/homescreen';
 import CartScreen from '../bottomTab/cartscreen';
 import ProfileScreen from '../bottomTab/profilescreen';
+import LoginScreen from '../bottomTab/loginscreen'; 
+
+
 
 const Tab = createBottomTabNavigator();
 
@@ -75,6 +78,7 @@ export default function Index() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
-    </Tab.Navigator>
+      <Tab.Screen name="Login" component={Loginscreen} />
+         </Tab.Navigator>
   );
 }

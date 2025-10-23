@@ -8,12 +8,12 @@ import {
   ScrollView,
   StyleSheet,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons"; // Built-in with Expo
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
-      
+      {/* ===== Search Bar ===== */}
       <View style={styles.searchBar}>
         <Ionicons name="search" size={20} color="#555" style={{ marginRight: 8 }} />
         <TextInput
@@ -23,7 +23,7 @@ export default function HomeScreen() {
         />
       </View>
 
-   
+      {/* ===== Tabs ===== */}
       <View style={styles.tabsContainer}>
         {["BAAF Lists", "Prime", "Video"].map((tab, index) => (
           <TouchableOpacity key={index} style={styles.tabButton}>
@@ -31,19 +31,27 @@ export default function HomeScreen() {
               {tab}
             </Text>
           </TouchableOpacity>
+          
         ))}
+        
       </View>
 
-      
+      <View>
+        <TouchableOpacity style={styles.signInButton} onPress={() => navigation.navigate('Login')}>
+  <Text style={styles.signInButtonText}>Sign in Security</Text>
+</TouchableOpacity>
+      </View>
+
+      {/* ===== Banner Image ===== */}
       <Image
         source={{
-          uri:{'http/www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Ffashion-model&psig=AOvVaw0Jz1w0K8mXnX5Kf3cXQX6G&ust=1696065600000000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJj1kq6T1P4CFQAAAAAdAAAAABAE'},
+          uri: "https://i.ibb.co/DQqPjk2/shopping-banner.jpg",
         }}
         style={styles.bannerImage}
         resizeMode="cover"
       />
 
-      
+      {/* ===== New Arrivals ===== */}
       <View style={styles.newArrivalsContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {[
@@ -60,7 +68,7 @@ export default function HomeScreen() {
         </ScrollView>
       </View>
 
-     
+      {/* ===== Sign In Section ===== */}
       <View style={styles.signInContainer}>
         <Text style={styles.signInText}>Sign in for your best experience</Text>
         <TouchableOpacity style={styles.signInButton}>
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
 
-  
+  // ===== Search Bar =====
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
@@ -94,7 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
- 
+  // ===== Tabs =====
   tabsContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
@@ -113,13 +121,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  
+  // ===== Banner =====
   bannerImage: {
     width: "100%",
     height: 200,
   },
 
-  
+  // ===== New Arrivals =====
   newArrivalsContainer: {
     marginTop: 10,
     paddingHorizontal: 10,
@@ -143,7 +151,7 @@ const styles = StyleSheet.create({
     height: 120,
   },
 
-  
+  // ===== Sign In Section =====
   signInContainer: {
     alignItems: "center",
     marginVertical: 30,
