@@ -1,12 +1,14 @@
 import React from 'react';
 import { Image, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from "@react-navigation/native";
+
 
 // Screens
 import HomeScreen from '../bottomTab/homescreen';
 import CartScreen from '../bottomTab/cartscreen';
 import ProfileScreen from '../bottomTab/profilescreen';
-import LoginScreen from '../bottomTab/loginscreen'; 
+import LoginScreen from '../bottomTab/LoginScreen'; 
 
 
 
@@ -78,7 +80,7 @@ export default function Index() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Cart" component={CartScreen} />
-      <Tab.Screen name="Login" component={Loginscreen} />
+      <Tab.Screen name="Login" component={LoginScreen} />
          </Tab.Navigator>
   );
 }
