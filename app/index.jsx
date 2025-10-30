@@ -1,8 +1,10 @@
 // src/navigation/index.jsx
+import { registerRootComponent } from "expo";
 import React from "react";
 import { Image, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { CartProvider } from "../context/CartContext";
 
 // Screens (adjust imports to your file locations)
 import HomeScreen from "../bottomTab/homescreen";
@@ -10,6 +12,7 @@ import CartScreen from "../bottomTab/cartscreen";
 import ProfileScreen from "../bottomTab/profilescreen";
 import ProductDetailScreen from "../bottomTab/productDetailScreen";
 import SearchResultsScreen from "../bottomTab/searchResultsScreen";
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -104,6 +107,23 @@ export default function IndexNavigator() {
           headerTintColor: "#007AFF",
         }}
       />
+
+      
+    
+      
     </Stack.Navigator>
   );
 }
+
+
+function App() {
+  return (
+    <CartProvider>
+      <NavigationContainer>
+        <IndexNavigator />
+      </NavigationContainer>
+    </CartProvider>
+  );
+}
+
+registerRootComponent(App);
