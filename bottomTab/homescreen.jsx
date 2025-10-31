@@ -247,7 +247,7 @@ export default function HomeScreen() {
           style={styles.signInButton}
           onPress={() => navigation.navigate("Login")}
         >
-          <Text style={styles.signInButtonText}>Sami</Text>
+          <Text style={styles.signInButtonText}>sign in</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
